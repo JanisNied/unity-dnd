@@ -8,14 +8,23 @@ public class CarDND : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
     public ObjScript objectScript;
+    public CarBounds carBounds;
     public void OnBeginDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+            Debug.Log("yay left click! and dragging!");
+            objectScript.lastDragged = null;
+            _canvasGroup.alpha = 0.6f;
+            _canvasGroup.blocksRaycasts = false;
+            _rectTransform.SetAsLastSibling();
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, carBounds.screenPoint.z));
+            _rectTransform.position = mousePos;
+            carBounds.screenPoint = Camera.main.WorldToScreenPoint(_rectTransform.localPosition);
+            carBounds.offset = _rectTransform.localPosition - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, carBounds.screenPoint.z));
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+           
     }
 
     public void OnEndDrag(PointerEventData eventData)
