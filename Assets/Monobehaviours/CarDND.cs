@@ -1,50 +1,92 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CarDND : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler
+public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
+    IDragHandler, IEndDragHandler
 {
-    private CanvasGroup _canvasGroup;
-    private RectTransform _rectTransform;
-    public ObjScript objectScript;
-    public CarBounds carBounds;
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-            Debug.Log("yay left click! and dragging!");
-            objectScript.lastDragged = null;
-            _canvasGroup.alpha = 0.6f;
-            _canvasGroup.blocksRaycasts = false;
-            _rectTransform.SetAsLastSibling();
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, carBounds.screenPoint.z));
-            _rectTransform.position = mousePos;
-            carBounds.screenPoint = Camera.main.WorldToScreenPoint(_rectTransform.localPosition);
-            carBounds.offset = _rectTransform.localPosition - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, carBounds.screenPoint.z));
-    }
+    private CanvasGroup canvasGro;
+    private RectTransform rectTra;
+    public ObjScript objectScr;
+    public CarBounds screenBou;
+    private bool dragging = false;
+    [SerializeField] private float dragSpeed = 0.8f;  // values below 10 are sluggish
 
-    public void OnDrag(PointerEventData eventData)
+    void Start()
     {
-           
+        canvasGro = GetComponent<CanvasGroup>();
+        rectTra = GetComponent<RectTransform>();
     }
-
-    public void OnEndDrag(PointerEventData eventData)
+    private void Update()
     {
-        throw new System.NotImplementedException();
+        // ondrag substitute for smoother lerping towards target (mouse)
+        if (dragging)
+        {
+            Vector3 curSreenPoint =
+                new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenBou.screenPoint.z);
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curSreenPoint) + screenBou.offset;
+            rectTra.position = Vector3.Lerp(rectTra.position, screenBou.GetClampedPosition(curPosition), Time.deltaTime * dragSpeed);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            Debug.Log("yay left click!");
-            objectScript.effect.PlayOneShot(objectScript.effectSounds[0]);
+            Debug.Log("OnPointerDown");
+            objectScr.effects.PlayOneShot(objectScr.audioCli[0]);
         }
     }
 
-    private void Start() {
-        Debug.Log("total garbage");
-        _canvasGroup = GetComponent<CanvasGroup>();
-        _rectTransform = GetComponent<RectTransform>();
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            dragging = true;
+            objectScr.lastDragged = null;
+            canvasGro.blocksRaycasts = false;
+            canvasGro.alpha = 0.6f;
+            rectTra.SetAsLastSibling();
+            Vector3 cursorWorldPos = Camera.main.ScreenToWorldPoint(
+                new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenBou.screenPoint.z));
+            rectTra.position = cursorWorldPos;
+
+            screenBou.screenPoint = Camera.main.WorldToScreenPoint(rectTra.localPosition);
+
+            screenBou.offset = rectTra.localPosition -
+                Camera.main.ScreenToWorldPoint(
+                    new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+                screenBou.screenPoint.z));
+        }
     }
-   
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            //Vector3 curSreenPoint =
+            //    new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenBou.screenPoint.z);
+            //Vector3 curPosition = Camera.main.ScreenToWorldPoint(curSreenPoint) + screenBou.offset;
+            //rectTra.position = Vector3.Lerp(rectTra.position, screenBou.GetClampedPosition(curPosition), Time.deltaTime * 0.2);
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+       if (Input.GetMouseButtonUp(0))
+        {
+            dragging = false;
+            objectScr.lastDragged = eventData.pointerDrag;
+            canvasGro.blocksRaycasts = true;
+            canvasGro.alpha = 1.0f;
+            if (objectScr.rightPlace)
+            {
+                canvasGro.blocksRaycasts = false;
+                objectScr.lastDragged = null;
+            }
+
+            objectScr.rightPlace = false;
+        }
+    }
 }

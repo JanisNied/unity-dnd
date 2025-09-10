@@ -170,8 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &162549879
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -233,6 +234,7 @@ GameObject:
   - component: {fileID: 232588338}
   - component: {fileID: 232588340}
   - component: {fileID: 232588339}
+  - component: {fileID: 232588341}
   m_Layer: 5
   m_Name: Garbage_truck
   m_TagString: garbage
@@ -297,6 +299,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232588337}
   m_CullTransparentMesh: 1
+--- !u!114 &232588341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232588337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &301422193
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +356,7 @@ GameObject:
   - component: {fileID: 335770426}
   - component: {fileID: 335770428}
   - component: {fileID: 335770427}
+  - component: {fileID: 335770429}
   m_Layer: 5
   m_Name: e61
   m_TagString: e61
@@ -405,6 +421,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335770425}
   m_CullTransparentMesh: 1
+--- !u!114 &335770429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335770425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &486398385
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +661,7 @@ GameObject:
   - component: {fileID: 702737267}
   - component: {fileID: 702737269}
   - component: {fileID: 702737268}
+  - component: {fileID: 702737270}
   m_Layer: 5
   m_Name: heavyduty
   m_TagString: heavyduty
@@ -696,6 +726,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702737266}
   m_CullTransparentMesh: 1
+--- !u!114 &702737270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702737266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &706936473
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,8 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &706936478
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -850,8 +894,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &710925452
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -960,6 +1005,7 @@ GameObject:
   - component: {fileID: 730080113}
   - component: {fileID: 730080115}
   - component: {fileID: 730080114}
+  - component: {fileID: 730080116}
   m_Layer: 5
   m_Name: police
   m_TagString: police
@@ -1024,6 +1070,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730080112}
   m_CullTransparentMesh: 1
+--- !u!114 &730080116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730080112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &745679823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,8 +1263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &753748651
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1267,6 +1327,7 @@ GameObject:
   - component: {fileID: 815988556}
   - component: {fileID: 815988558}
   - component: {fileID: 815988557}
+  - component: {fileID: 815988559}
   m_Layer: 5
   m_Name: ft
   m_TagString: fire
@@ -1331,6 +1392,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815988555}
   m_CullTransparentMesh: 1
+--- !u!114 &815988559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815988555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &891073248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,8 +1456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &891073251
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1445,6 +1520,7 @@ GameObject:
   - component: {fileID: 904517066}
   - component: {fileID: 904517068}
   - component: {fileID: 904517067}
+  - component: {fileID: 904517069}
   m_Layer: 5
   m_Name: b2
   m_TagString: b2
@@ -1509,6 +1585,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904517065}
   m_CullTransparentMesh: 1
+--- !u!114 &904517069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904517065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &937951630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1609,7 @@ GameObject:
   - component: {fileID: 937951631}
   - component: {fileID: 937951633}
   - component: {fileID: 937951632}
+  - component: {fileID: 937951634}
   m_Layer: 5
   m_Name: tractor1
   m_TagString: tractor
@@ -1584,6 +1674,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937951630}
   m_CullTransparentMesh: 1
+--- !u!114 &937951634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937951630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &956305361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,10 +1745,10 @@ MonoBehaviour:
   - {fileID: 710925449}
   - {fileID: 1365445873}
   - {fileID: 162549876}
-  originalCoords: []
-  _canvas: {fileID: 1898566975}
-  effect: {fileID: 745679825}
-  effectSounds:
+  startCoordinates: []
+  can: {fileID: 1898566975}
+  effects: {fileID: 745679825}
+  audioCli:
   - {fileID: 8300000, guid: e57e0e3bd62e5034f9babead6e179497, type: 3}
   - {fileID: 8300000, guid: 06cce931ca34ef64c928039aaa4dec7a, type: 3}
   - {fileID: 8300000, guid: 02afbd33dab4d6842b3ee03adb562600, type: 3}
@@ -1664,6 +1767,7 @@ GameObject:
   - component: {fileID: 989655799}
   - component: {fileID: 989655801}
   - component: {fileID: 989655800}
+  - component: {fileID: 989655802}
   m_Layer: 5
   m_Name: bus
   m_TagString: bus
@@ -1728,6 +1832,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989655798}
   m_CullTransparentMesh: 1
+--- !u!114 &989655802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989655798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &1009483254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,8 +2013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &1025983405
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1921,6 +2039,7 @@ GameObject:
   - component: {fileID: 1047284622}
   - component: {fileID: 1047284624}
   - component: {fileID: 1047284623}
+  - component: {fileID: 1047284625}
   m_Layer: 5
   m_Name: tractor5
   m_TagString: tractor
@@ -1985,6 +2104,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047284621}
   m_CullTransparentMesh: 1
+--- !u!114 &1047284625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047284621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &1065152245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2128,7 @@ GameObject:
   - component: {fileID: 1065152246}
   - component: {fileID: 1065152248}
   - component: {fileID: 1065152247}
+  - component: {fileID: 1065152249}
   m_Layer: 5
   m_Name: cement
   m_TagString: cement
@@ -2060,6 +2193,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065152245}
   m_CullTransparentMesh: 1
+--- !u!114 &1065152249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065152245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &1198591467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2264,7 @@ GameObject:
   - component: {fileID: 1223651864}
   - component: {fileID: 1223651866}
   - component: {fileID: 1223651865}
+  - component: {fileID: 1223651867}
   m_Layer: 5
   m_Name: e46
   m_TagString: e46
@@ -2182,6 +2329,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223651863}
   m_CullTransparentMesh: 1
+--- !u!114 &1223651867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223651863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &1275234383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,8 +2426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &1365445876
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2419,8 +2580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!1 &1503735110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,8 +2634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &1503735113
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2575,8 +2738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &1634966369
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2874,6 +3038,7 @@ GameObject:
   - component: {fileID: 1868549575}
   - component: {fileID: 1868549577}
   - component: {fileID: 1868549576}
+  - component: {fileID: 1868549578}
   m_Layer: 5
   m_Name: amb
   m_TagString: medicine
@@ -2938,6 +3103,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868549574}
   m_CullTransparentMesh: 1
+--- !u!114 &1868549578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868549574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa8c893cb64c81429b5242ddd62bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectScript: {fileID: 956305363}
 --- !u!1 &1898566972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,8 +3271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &2003431545
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3196,8 +3375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e60c84c1d5748c46b7dd34890428aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScript: {fileID: 956305363}
-  carBounds: {fileID: 713970749}
+  objectScr: {fileID: 956305363}
+  screenBou: {fileID: 713970749}
+  dragSpeed: 10
 --- !u!225 &2085698850
 CanvasGroup:
   m_ObjectHideFlags: 0

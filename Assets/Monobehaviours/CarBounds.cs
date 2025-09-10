@@ -6,24 +6,28 @@ public class CarBounds : MonoBehaviour
     public Vector3 screenPoint, offset;
     private float minX, maxX, minY, maxY;
     public float padding = 0.02f;
-    private void Awake()
+
+
+    void Awake()
     {
         Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(Vector3.zero);
-        Vector3 upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        Vector3 upperRight =
+            Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 
-        float newWidth = (upperRight.x - lowerLeft.x) * padding;
-        float newHeight = (upperRight.y - lowerLeft.y) * padding;
+        float widthReduction = (upperRight.x - lowerLeft.x) * padding;
+        float heightReduction = (upperRight.y - lowerLeft.y) * padding;
 
-        minX = lowerLeft.x + newWidth;
-        maxX = lowerLeft.x - newWidth;
-        minY = lowerLeft.y + newHeight;
-        minY = lowerLeft.y - newHeight;
+        minX = lowerLeft.x + widthReduction;
+        maxX = upperRight.x - widthReduction;
+        minY = lowerLeft.y + heightReduction;
+        maxY = upperRight.y - heightReduction;
     }
 
-    public Vector2 GetClampedPosition (Vector3 pos)
+    public Vector2 GetClampedPosition(Vector3 position)
     {
         return new Vector2(
-            Mathf.Clamp(pos.x, minX, maxX), Mathf.Clamp(pos.y, minY, maxY)
-            );
+            Mathf.Clamp(position.x, minX, maxX),
+            Mathf.Clamp(position.y, minY, maxY)
+        );
     }
 }
