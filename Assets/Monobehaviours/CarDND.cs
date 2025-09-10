@@ -21,6 +21,8 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     private void Update()
     {
         // ondrag substitute for smoother lerping towards target (mouse)
+
+        // NOTE: not framerate independent!!! (i don't think it affects much in this context though, for a game like this, but i like the lerping, so i'll keep it as is)
         if (dragging)
         {
             Vector3 curSreenPoint =
