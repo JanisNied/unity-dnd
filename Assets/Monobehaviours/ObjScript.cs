@@ -9,7 +9,6 @@ public class ObjScript : MonoBehaviour
 
     public GameObject[] vehicles;
     [HideInInspector]
-    public Vector2[] startCoordinates;
     public Canvas can;
     public AudioSource effects;
     public AudioClip[] audioCli;
