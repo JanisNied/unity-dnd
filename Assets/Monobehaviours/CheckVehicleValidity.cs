@@ -19,7 +19,7 @@ public class CheckVehicleValidity : MonoBehaviour, IDropHandler
                 // rot difference
                 _endRotation = GetComponent<RectTransform>().transform.eulerAngles.z;
                 _entityRotation = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
-                _rotDifference = Mathf.Abs(_endRotation - _entityRotation);
+                _rotDifference = Mathf.DeltaAngle(_entityRotation, _endRotation);
                 Debug.Log("Rotation Difference: " + _rotDifference);
 
                 // scale difference
@@ -29,11 +29,15 @@ public class CheckVehicleValidity : MonoBehaviour, IDropHandler
                 _yDifference = Mathf.Abs(_endScale.y - _entityScale.y);
 
                 Debug.Log($"Scale Differences: ({_xDifference}, {_yDifference})");
-                if (_rotDifference <= 5 || (_rotDifference >= 355 &&  _rotDifference <= 360) && (_xDifference <= 0.05 && _yDifference <= 0.05))
+                // _rotDifference <= 5 || (_rotDifference >= 355 &&  _rotDifference <= 360)
+                Debug.Log($"Angle difference: {Mathf.DeltaAngle(_entityRotation, _endRotation)} ");
+                if ( _rotDifference <= 5 ||  _rotDifference >= -5 && (_xDifference <= 0.05 && _yDifference <= 0.05))
                 {
                     objectScript.rightPlace = true;
                     Debug.Log("yay");
                     CopyTransform(GetComponent<RectTransform>(), eventData.pointerDrag.GetComponent<RectTransform>());
+                    objectScript.effects.PlayOneShot(objectScript.GetAudioClip(eventData.pointerDrag.tag));
+                    Debug.Log(objectScript.GetAudioClip(eventData.pointerDrag.tag));
                 } else
                 {
                     eventData.pointerDrag.GetComponent<RectTransform>().transform.localPosition = objectScript.GetStartPosition(eventData.pointerDrag.tag);

@@ -17,11 +17,13 @@ public class ObjScript : MonoBehaviour
     public GameObject lastDragged = null;
     // substitute for 12 cases within a switch constructor because who the fuck does that without thinking of alternative solutions
     private List<KeyValuePair<string, Vector3>> _startPositions = new List<KeyValuePair<string, Vector3>>();
+    private List<KeyValuePair<string, AudioClip>> _sounds = new List<KeyValuePair<string, AudioClip>>();
     private void Awake()
     {
 
         for (int i = 0; i< vehicles.Length; i++)
         {
+            _sounds.Add(new KeyValuePair<string, AudioClip>(vehicles[i].tag, audioCli[i + 2]));
             _startPositions.Add(new KeyValuePair<string, Vector3>(vehicles[i].tag, vehicles[i].GetComponent<RectTransform>().localPosition));
             Debug.Log(_startPositions);
         }
@@ -31,5 +33,9 @@ public class ObjScript : MonoBehaviour
    public Vector3 GetStartPosition(string tag)
     {
         return _startPositions.FirstOrDefault(x => x.Key == tag).Value;
+    }
+    public AudioClip GetAudioClip(string tag)
+    {
+        return _sounds.FirstOrDefault(x => x.Key == tag).Value;
     }
 }
