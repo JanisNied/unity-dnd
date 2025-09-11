@@ -19,7 +19,7 @@ public class CheckVehicleValidity : MonoBehaviour, IDropHandler
                 // rot difference
                 _endRotation = GetComponent<RectTransform>().transform.eulerAngles.z;
                 _entityRotation = eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
-                _rotDifference = Mathf.DeltaAngle(_entityRotation, _endRotation);
+                _rotDifference = Mathf.Abs(Mathf.DeltaAngle(_entityRotation, _endRotation));
                 Debug.Log("Rotation Difference: " + _rotDifference);
 
                 // scale difference
@@ -31,7 +31,7 @@ public class CheckVehicleValidity : MonoBehaviour, IDropHandler
                 Debug.Log($"Scale Differences: ({_xDifference}, {_yDifference})");
                 // _rotDifference <= 5 || (_rotDifference >= 355 &&  _rotDifference <= 360)
                 Debug.Log($"Angle difference: {Mathf.DeltaAngle(_entityRotation, _endRotation)} ");
-                if ( _rotDifference <= 5 ||  _rotDifference >= -5 && (_xDifference <= 0.05 && _yDifference <= 0.05))
+                if ( _rotDifference <= 5 && (_xDifference <= 0.05 && _yDifference <= 0.05))
                 {
                     objectScript.rightPlace = true;
                     Debug.Log("yay");
