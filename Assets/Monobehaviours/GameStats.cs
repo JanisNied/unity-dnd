@@ -23,7 +23,6 @@ public class GameStats : MonoBehaviour
                 t.Minutes,
                 t.Seconds,
                 t.Milliseconds);
-        Debug.Log(answer);
         timerText.text = answer;
         
       
