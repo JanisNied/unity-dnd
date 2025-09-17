@@ -18,6 +18,7 @@ public class ObjScript : MonoBehaviour
     // substitute for 12 cases within a switch constructor because who the fuck does that without thinking of alternative solutions
     private List<KeyValuePair<string, Vector3>> _startPositions = new List<KeyValuePair<string, Vector3>>();
     private List<KeyValuePair<string, AudioClip>> _sounds = new List<KeyValuePair<string, AudioClip>>();
+    public bool drag = false;
     private void Awake()
     {
 

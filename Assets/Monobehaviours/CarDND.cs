@@ -10,7 +10,7 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     private RectTransform rectTra;
     public ObjScript objectScr;
     public CarBounds screenBou;
-    private bool dragging = false;
+    public bool dragging = false;
     [SerializeField] private float dragSpeed = 0.8f;  // values below 10 are sluggish
 
     void Start()
@@ -46,7 +46,7 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         if (Input.GetMouseButton(0))
         {
             dragging = true;
-            objectScr.lastDragged = null;
+            objectScr.lastDragged = eventData.pointerDrag;
             canvasGro.blocksRaycasts = false;
             canvasGro.alpha = 0.6f;
             rectTra.SetAsLastSibling();
@@ -79,7 +79,7 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
        if (Input.GetMouseButtonUp(0))
         {
             dragging = false;
-            objectScr.lastDragged = eventData.pointerDrag;
+            //objectScr.lastDragged = eventData.pointerDrag;
             canvasGro.blocksRaycasts = true;
             canvasGro.alpha = 1.0f;
             if (objectScr.rightPlace)
