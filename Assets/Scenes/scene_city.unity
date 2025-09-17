@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &162549879
 CanvasGroup:
@@ -6035,6 +6036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &706936478
 CanvasGroup:
@@ -6101,6 +6103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &710925452
 CanvasGroup:
@@ -6198,6 +6201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenPoint: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
   padding: 0.02
 --- !u!1 &730080112
 GameObject:
@@ -6470,6 +6477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &753748651
 CanvasGroup:
@@ -6663,6 +6671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &891073251
 CanvasGroup:
@@ -6969,6 +6978,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 818ef9ca2c76dfe40971c20665da751c, type: 3}
   rightPlace: 0
   lastDragged: {fileID: 0}
+  drag: 0
 --- !u!1 &989655798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12061,6 +12071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &1025983405
 CanvasGroup:
@@ -17307,6 +17318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &1365445876
 CanvasGroup:
@@ -17461,6 +17473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!1 &1437860452
 GameObject:
@@ -22348,6 +22361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &1503735113
 CanvasGroup:
@@ -22452,6 +22466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &1634966369
 CanvasGroup:
@@ -23109,6 +23124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &2003431545
 CanvasGroup:
@@ -23213,6 +23229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectScr: {fileID: 956305363}
   screenBou: {fileID: 713970749}
+  dragging: 0
   dragSpeed: 10
 --- !u!225 &2085698850
 CanvasGroup:
