@@ -23,6 +23,10 @@ public class ObstaclesController : MonoBehaviour
     private Color _orgColor;
 
     public float _fadeOffset = 80f;
+
+
+
+    public ObstacleSpawner _spawner;
     private void Start()
     {
         _group = GetComponent<CanvasGroup>();
@@ -35,6 +39,7 @@ public class ObstaclesController : MonoBehaviour
         _orgColor = _image.color;
         _objectScript = Object.FindFirstObjectByType<ObjScript>();
         _screenBounds = Object.FindFirstObjectByType<CarBounds>();
+        _spawner = Object.FindFirstObjectByType<ObstacleSpawner>();
 
         StartCoroutine(FadeIn());
     }
@@ -50,7 +55,7 @@ public class ObstaclesController : MonoBehaviour
         }
 
         // to the right
-        if (speed < 0 && transform.position.x > (_screenBounds.minX - _fadeOffset) && !isFadingOut)
+        if (speed < 0 && transform.position.x > (_screenBounds.maxX - _fadeOffset) && !isFadingOut)
         {
             isFadingOut = true;
             StartCoroutine(FadeOutDestroy());
@@ -58,7 +63,19 @@ public class ObstaclesController : MonoBehaviour
 
         if (_objectScript.drag == true && !isFadingOut && RectTransformUtility.RectangleContainsScreenPoint(_transform, Input.mousePosition, Camera.main))
         {
-            Debug.Log("hit");
+            Debug.Log("car hit! ahhh!!!");
+            if (_objectScript.lastDragged != null)
+            {
+                StartCoroutine(ShrinkAndDestroy(_objectScript.lastDragged, 0.5f));
+                _objectScript.lastDragged = null;
+                _objectScript.drag = false;
+            }
+            StartCoroutine(FadeOutDestroy());
+            isFadingOut = true;
+            _image.color = Color.magenta;
+            StartCoroutine(RecoverColour());
+            StartCoroutine(Vibrate());
+            if (_spawner._audio != null) _spawner._audio.PlayOneShot(_spawner._effect);
             // ...
         }
     }

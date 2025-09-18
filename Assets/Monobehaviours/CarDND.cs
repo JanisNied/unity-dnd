@@ -45,6 +45,7 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     {
         if (Input.GetMouseButton(0))
         {
+            objectScr.drag = true;
             dragging = true;
             objectScr.lastDragged = eventData.pointerDrag;
             canvasGro.blocksRaycasts = false;
@@ -79,6 +80,7 @@ public class CarDND : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
        if (Input.GetMouseButtonUp(0))
         {
             dragging = false;
+            objectScr.drag = false;
             //objectScr.lastDragged = eventData.pointerDrag;
             canvasGro.blocksRaycasts = true;
             canvasGro.alpha = 1.0f;
