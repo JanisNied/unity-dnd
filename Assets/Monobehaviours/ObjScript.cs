@@ -26,6 +26,9 @@ public class ObjScript : MonoBehaviour
     public TMP_Text victoryScreenTimeLabel;
     public TMP_Text destroyedLabel;
     public GameObject victoryScreenUI;
+    public GameObject[] stars;
+    public GameStats stats;
+    private float points = 0;
 
     [HideInInspector]
     public int vehiclesRemaining = 0;
@@ -69,6 +72,33 @@ public class ObjScript : MonoBehaviour
                 Debug.Log("time spent: "+timeLabel.text);
                 victoryScreenTimeLabel.text = "Time spent: " + timeLabel.text;
                 destroyedLabel.text = "Vehicles destroyed: " + vehiclesDestroyed;
+                float time = Mathf.Floor(stats.totalElapsed);
+                if (time < 300f)
+                {
+                    points += 30f;
+                } else if (time < 600f)
+                {
+                    points += 20f;
+                } else if (time < 900f)
+                {
+                    points += 10f;
+                }
+                points -= vehiclesDestroyed * 2;
+                if (points > 25f)
+                {
+                    foreach (GameObject star in stars)
+                    {
+                        star.SetActive(true);
+                    }
+                } else if (points > 15 && points <= 25)
+                {
+                    stars[0].SetActive(true);
+                    stars[1].SetActive(true);
+                }
+                else if (points > 10 && points <= 15)
+                {
+                    stars[0].SetActive(true);
+                }
             }
         }
     }

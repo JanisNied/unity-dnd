@@ -6,7 +6,7 @@ public class GameStats : MonoBehaviour
 {
     public TMP_Text timerText;
     public ObjScript objectScript;
-    private float totalElapsed;
+    public float totalElapsed;
 
     void Update()
     {
