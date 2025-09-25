@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class ObjScript : MonoBehaviour
@@ -20,9 +21,16 @@ public class ObjScript : MonoBehaviour
     private List<KeyValuePair<string, AudioClip>> _sounds = new List<KeyValuePair<string, AudioClip>>();
     [HideInInspector]
     public bool drag = false;
+    public bool victoryScreen = false;
+    public TMP_Text timeLabel;
+    public TMP_Text victoryScreenTimeLabel;
+    public TMP_Text destroyedLabel;
+    public GameObject victoryScreenUI;
 
-    private int vehiclesRemaining = 0;
-    private int vehiclesDestroyed = 0;
+    [HideInInspector]
+    public int vehiclesRemaining = 0;
+    [HideInInspector]
+    public int vehiclesDestroyed = 0;
     private void Awake()
     {
 
@@ -48,5 +56,20 @@ public class ObjScript : MonoBehaviour
     public AudioClip GetAudioClip(string tag)
     {
         return _sounds.FirstOrDefault(x => x.Key == tag).Value;
+    }
+    private void Update()
+    {
+        if (vehiclesRemaining == 0)
+        {
+            if (!victoryScreen)
+            {
+                victoryScreen = true;
+                victoryScreenUI.SetActive(true);
+                Debug.Log("win win win!");
+                Debug.Log("time spent: "+timeLabel.text);
+                victoryScreenTimeLabel.text = "Time spent: " + timeLabel.text;
+                destroyedLabel.text = "Vehicles destroyed: " + vehiclesDestroyed;
+            }
+        }
     }
 }

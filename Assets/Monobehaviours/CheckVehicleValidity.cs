@@ -37,6 +37,8 @@ public class CheckVehicleValidity : MonoBehaviour, IDropHandler
                     Debug.Log("yay");
                     CopyTransform(GetComponent<RectTransform>(), eventData.pointerDrag.GetComponent<RectTransform>());
                     objectScript.effects.PlayOneShot(objectScript.GetAudioClip(eventData.pointerDrag.tag));
+                    objectScript.vehiclesRemaining--;
+                    Debug.Log("vehicles remaining"+objectScript.vehiclesRemaining);
                     Debug.Log(objectScript.GetAudioClip(eventData.pointerDrag.tag));
                 } else
                 {

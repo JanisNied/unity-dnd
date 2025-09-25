@@ -76,7 +76,9 @@ public class ObstaclesController : MonoBehaviour
             StartCoroutine(RecoverColour());
             StartCoroutine(Vibrate());
             if (_spawner._audio != null) _spawner._audio.PlayOneShot(_spawner._effect);
-            // ...
+            _objectScript.vehiclesDestroyed++;
+            _objectScript.vehiclesRemaining--;
+            Debug.Log("vehicles remaining" + _objectScript.vehiclesRemaining);
         }
     }
     private IEnumerator FadeIn()
