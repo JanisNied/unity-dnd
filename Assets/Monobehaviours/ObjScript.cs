@@ -20,17 +20,26 @@ public class ObjScript : MonoBehaviour
     private List<KeyValuePair<string, AudioClip>> _sounds = new List<KeyValuePair<string, AudioClip>>();
     [HideInInspector]
     public bool drag = false;
+
+    private int vehiclesRemaining = 0;
+    private int vehiclesDestroyed = 0;
     private void Awake()
     {
 
-        for (int i = 0; i< vehicles.Length; i++)
+     // empty
+
+    }
+    public void FillOutStartPos()
+    {
+        for (int i = 0; i < vehicles.Length; i++)
         {
             _sounds.Add(new KeyValuePair<string, AudioClip>(vehicles[i].tag, audioCli[i + 2]));
             _startPositions.Add(new KeyValuePair<string, Vector3>(vehicles[i].tag, vehicles[i].GetComponent<RectTransform>().localPosition));
             Debug.Log(_startPositions);
+            vehiclesRemaining++;
         }
         Debug.Log(_startPositions.FirstOrDefault(x => x.Key == "garbage").Value);
-
+        Debug.Log("populated kvp list");
     }
    public Vector3 GetStartPosition(string tag)
     {
