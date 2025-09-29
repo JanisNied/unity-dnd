@@ -26,6 +26,9 @@ public class VehicleShuffler : MonoBehaviour
                 _randomSpotPlaces.Remove(chosenSpot);
                 Vector3 pos = chosenSpot.GetComponent<RectTransform>().localPosition;
                 _place.transform.localPosition = pos;
+                float scale = Mathf.Round(Random.Range(0.6f, 0.9f) * 100f) / 100f;
+                _place.transform.localScale = new Vector3(scale, scale, 1);
+                _place.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
                 _place.SetActive(true);
             }
         }

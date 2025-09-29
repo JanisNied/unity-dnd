@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-
+using DG.Tweening;
 public class ObjScript : MonoBehaviour
 {
 
@@ -68,18 +68,19 @@ public class ObjScript : MonoBehaviour
             {
                 victoryScreen = true;
                 victoryScreenUI.SetActive(true);
+                victoryScreenUI.transform.DOBlendableScaleBy(new Vector3(1, 1, 1), 0.4f);
                 Debug.Log("win win win!");
                 Debug.Log("time spent: "+timeLabel.text);
                 victoryScreenTimeLabel.text = "Time spent: " + timeLabel.text;
                 destroyedLabel.text = "Vehicles destroyed: " + vehiclesDestroyed;
                 float time = Mathf.Floor(stats.totalElapsed);
-                if (time < 300f)
+                if (time < 600f)
                 {
                     points += 30f;
-                } else if (time < 600f)
+                } else if (time < 900f)
                 {
                     points += 20f;
-                } else if (time < 900f)
+                } else if (time < 1800f)
                 {
                     points += 10f;
                 }
