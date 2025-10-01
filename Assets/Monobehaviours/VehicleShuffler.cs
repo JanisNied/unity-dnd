@@ -45,4 +45,10 @@ public class VehicleShuffler : MonoBehaviour
         }
         Debug.Log("shuffled!");
     }
+    private void CopyTransform(RectTransform source, RectTransform target)
+    {
+        target.localPosition = source.localPosition;
+        target.localScale = source.localScale;
+        target.localRotation = source.localRotation;
+    }
 }

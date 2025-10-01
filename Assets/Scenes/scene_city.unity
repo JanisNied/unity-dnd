@@ -639,6 +639,7 @@ Transform:
   - {fileID: 1838323305}
   - {fileID: 984759665}
   - {fileID: 1813222454}
+  - {fileID: 1968161737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317068137
@@ -26226,6 +26227,78 @@ MonoBehaviour:
   timerText: {fileID: 385289536}
   objectScript: {fileID: 956305363}
   totalElapsed: 0
+--- !u!1 &1968161736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968161737}
+  - component: {fileID: 1968161738}
+  m_Layer: 0
+  m_Name: Debugging
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1968161737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968161736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 301422194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1968161738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968161736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c40d714dc9e53409d77236021e193a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vehicles:
+  - {fileID: 1401031841}
+  - {fileID: 1025983400}
+  - {fileID: 706936473}
+  - {fileID: 753748648}
+  - {fileID: 1503735110}
+  - {fileID: 1634966366}
+  - {fileID: 891073248}
+  - {fileID: 2085698847}
+  - {fileID: 2003431542}
+  - {fileID: 710925449}
+  - {fileID: 1365445873}
+  - {fileID: 162549876}
+  _places:
+  - {fileID: 232588337}
+  - {fileID: 815988555}
+  - {fileID: 1868549574}
+  - {fileID: 989655798}
+  - {fileID: 904517065}
+  - {fileID: 1065152245}
+  - {fileID: 1223651863}
+  - {fileID: 335770425}
+  - {fileID: 730080112}
+  - {fileID: 702737266}
+  - {fileID: 937951630}
+  - {fileID: 1047284621}
+  _obstacleHolder: {fileID: 2039855620}
+  _isObstacles: 1
 --- !u!1 &1981321088
 GameObject:
   m_ObjectHideFlags: 0
