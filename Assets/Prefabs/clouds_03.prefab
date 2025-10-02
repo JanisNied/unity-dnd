@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7235888912399555969}
   - component: {fileID: 601088621912489319}
   - component: {fileID: 548698901831038105}
+  - component: {fileID: 3087447941333160429}
   m_Layer: 5
   m_Name: clouds_03
   m_TagString: Untagged
@@ -106,3 +107,40 @@ MonoBehaviour:
   waveFreq: 0.9
   fadeDuration: 0.5
   _fadeOffset: 80
+  _spawner: {fileID: 0}
+--- !u!58 &3087447941333160429
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151924222088665808}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 40.9

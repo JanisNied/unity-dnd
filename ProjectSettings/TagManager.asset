@@ -16,6 +16,7 @@ TagManager:
   - heavyduty
   - tractor
   - tractor5
+  - bomb
   layers:
   - Default
   - TransparentFX

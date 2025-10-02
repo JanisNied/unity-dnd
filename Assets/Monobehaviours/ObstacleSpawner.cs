@@ -19,7 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float _obstacleMaxSpeed = 200f;
 
     public AudioSource _audio;
-    public AudioClip _effect;
+    public AudioClip[] _effects;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

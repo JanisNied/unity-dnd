@@ -25478,6 +25478,7 @@ MonoBehaviour:
   - {fileID: 4801231831571110770, guid: 482b5660624ef2c4c8220c6960045591, type: 3}
   - {fileID: 2039104952564420474, guid: 9b74a8f49dca6bc4dbbf06d0716f32e0, type: 3}
   - {fileID: 151924222088665808, guid: 888a8d3b60fde5e4eab6bcd55946e374, type: 3}
+  - {fileID: 700529483348963545, guid: af8e72d942a54a1469e3a25d3cc521af, type: 3}
   _spawnLoc: {fileID: 959360258}
   _cloudSpawnInterval: 3
   _obstacleSpawnInterval: 2
@@ -25487,7 +25488,9 @@ MonoBehaviour:
   _obstacleMinSpeed: 2
   _obstacleMaxSpeed: 200
   _audio: {fileID: 661723468}
-  _effect: {fileID: 8300000, guid: ad601ce7e8ef1c842b7f5340eeefc110, type: 3}
+  _effects:
+  - {fileID: 8300000, guid: ad601ce7e8ef1c842b7f5340eeefc110, type: 3}
+  - {fileID: 8300000, guid: 84f682750eb7b014687088b8a6eb6b31, type: 3}
 --- !u!1 &1851635177
 GameObject:
   m_ObjectHideFlags: 0
